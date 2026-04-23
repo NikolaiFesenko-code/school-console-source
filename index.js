@@ -64,7 +64,7 @@ app.get("/getcover/:id", (req,res) => {
 
 
 app.get("/getUserInfo", (req,res)=> {
-    fs.readFile("user.json",  (err,data) => {
+    fs.readFile(__dirname + "/user.json",  (err,data) => {
         if(err) {
              console.log(err)
              res.send(err);
@@ -76,7 +76,7 @@ app.get("/getUserInfo", (req,res)=> {
     })
 })
 app.post("/setUserName", (req,res) => {
-    fs.readFile("user.json",  (err,data) => {
+    fs.readFile(__dirname + "/user.json",  (err,data) => {
         if(err) {
              console.log(err)
              res.send(err);
@@ -99,7 +99,7 @@ app.get("/getgamepad", (req,res) => {
 })
 
 function saveUser() {
-    fs.writeFileSync("user.json", JSON.stringify(user));
+    fs.writeFileSync(__dirname + "/user.json", JSON.stringify(user));
 }
 function scan() {
     var games = []
@@ -122,7 +122,7 @@ function scan() {
         
     }
     games_list = games;
-    fs.writeFileSync("games.json", JSON.stringify(games));
+    fs.writeFileSync(__dirname + "/games.json", JSON.stringify(games));
 }
 
 setInterval(()=> {
@@ -130,7 +130,7 @@ setInterval(()=> {
 }, 10000)
 
 
-app.listen(PORT,() => {
+app.listen(PORT,'0.0.0.0',() => {
     console.log("App listens on " + PORT)
     ///open_browser()
     //spawn('open', ['http://localhost:9000']);

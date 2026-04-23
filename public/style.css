@@ -67,6 +67,7 @@ h1 {
 @media screen and (width >= 2600px) {
   .container {
     scale: 250%;
+    margin-top: 500px !important;
   }
   .input_prompts_wrap {
     scale: 150%;
