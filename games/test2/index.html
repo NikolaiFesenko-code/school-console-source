@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Template</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="test2/index.js"></script>
+        <script>
+            //var engine = new Engine({"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":176328,"index.wasm":36145869},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4});
+            //engine.startGame();
+
+
+            const myWasm = 'test2/index';
+            const myPck = 'test2/index.pck';
+            const engine = new Engine();
+            Promise.all([
+                // Load and init the engine
+                engine.init(myWasm),
+                // And the pck concurrently
+                engine.preloadFile(myPck),
+            ]).then(() => {
+                // Now start the engine.
+                return engine.start({ args: ['--main-pack', myPck] });
+            }).then(() => {
+                console.log('Engine has started!');
+            });
+        </script>
+       
+        <div id="console_overhead" >
+            <h1>Hi</h1>
+            <p>Test</p>
+        </div>
+
+        <style>
+            #console_overhead {
+                position: absolute;
+                top: 0;
+                width: 200px;
+                left: auto;
+                background-color: red;
+                height: 100px;
+            }
+        </style>
+        <script src="http://localhost:9999/getoverhead/"></script>
+    </body>
+</html>

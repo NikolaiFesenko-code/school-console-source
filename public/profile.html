@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Name Changer</title>
+</head>
+<body>
+     <script src="axios.js"></script>
+    <script>
+
+        
+    axios.post('/setUserName', {
+        name: prompt("Set new user name"),
+    }).then(response => {
+        console.log('success:', response.data);
+        document.writeln("Username changed");
+    }).catch(error => {
+        console.error('Error:', error);
+        document.writeln(error);
+    });
+
+
+    </script>
+</body>
+</html>

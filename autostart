@@ -1,0 +1,32 @@
+\#!/bin/sh
+
+echo "Autostart running" > /tmp/labwc.log
+
+
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+export WAYLAND_DISPLAY=wayland-0
+export XDG_SESSION_TYPE=wayland
+
+sleep 5
+
+echo "Starting chromium" >> /tmp/labwc.log
+
+antimicrox  --tray --profile /home/nikolai/controller/test.gamecontroller.amgp &
+chromium --ozone-platform=wayland --user-data-dir=/tmp/kiosk-profile --no-first-run --no-default-browser-check --disable-session-crashed-bubble_ --kiosk http://localhost:10000 &
+
+
+
+
+
+
+#!/bin/bash
+while true; do
+	bluetoothctl connect E4:17:D8:21:45:7F
+	sleep 2
+done
+
+
+
+
+antimicrox  --tray --profile /home/nikolai/controller/test.gamecontroller.amgp &
+sh /home/nikolai/bt-connect.sh &

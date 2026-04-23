@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <link  rel="stylesheet" href="bg1.css">
+</head>
+<body class="bg-dark text-light text-shadow">
+    <div id="bg-fade-dark"></div>
+    <div class="wave "></div>
+     <div class="wave"></div>
+     <div class="wave"></div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Hi, <span id="user_name_placeholder"></span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h6>Last Game played: <span id="game_name_placeholder"></span></h6>
+            </div>
+        </div>
+        <div id="items_wrap"></div>
+        
+    </div>
+    <div class="input_prompts_wrap">
+        <div class="input_prompt">
+            <img src="input/xbox_dpad_up_outline.svg" alt="">
+            <h4>Navigation UP</h4>
+        </div>
+        <div class="input_prompt">
+            <img src="input/xbox_dpad_down_outline.svg" alt="">
+            <h4>Navigation DOWN</h4>
+        </div>
+        <div class="input_prompt">
+            <img src="input/xbox_button_a.svg" alt="">
+            <h4>Action</h4>
+        </div>
+        <div class="input_prompt">
+            <img src="input/xbox_button_y.svg" alt="">
+            <h4>Reload</h4>
+        </div>
+    </div>
+
+
+    <div class="logo">
+        <img src="logo_icon.png" alt="">
+    </div>
+    <audio id="beep_audio" hidden src="beep.mp3"></audio>
+    <script src="Bootstrap/js/bootstrap.js"></script>
+    <script src="axios.js"></script>
+    <script src="index.js"></script>
+
+
+
+   <script src="gamepad.js"></script>
+</body>
+</html>

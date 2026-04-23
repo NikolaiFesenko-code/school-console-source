@@ -1,0 +1,8 @@
+https://codepen.io/baarbaracrr/pen/KKovmGb
+
+https://codepen.io/ksenia-k/pen/jXbWaJ
+
+12 Jan - done new ui
+19 Jan - done game serving , bg animation, first database schema
+
+image - https://www.vecteezy.com/vector-art/8143807-seamless-pattern-with-gaming-icons
